@@ -1,0 +1,9 @@
+services:
+  transcriber-server:
+    build:
+      context: .
+    env_file: .env
+    ports:
+      - "5000:${PORT}"
+    volumes:
+      - "./data:/app/data"

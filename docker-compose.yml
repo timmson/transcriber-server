@@ -1,9 +1,15 @@
 services:
-  transcriber-server:
+  transcriber:
     build:
       context: .
-    env_file: .env
-    ports:
-      - "5000:${PORT}"
     volumes:
-      - "./data:/app/data"
+      - "./:/app/"
+    #command: "apt search libcublas"
+    command: "python3 transcriber.py"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]

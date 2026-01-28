@@ -4,8 +4,9 @@ services:
       context: .
     volumes:
       - "./:/app/"
-    #command: "apt search libcublas"
     command: "python3 transcriber.py"
+    # command: "./install.sh"
+    # command: "chmod +x ./.venv/bin/activate && ./.venv/bin/activate && python3 diarisator.py"
     deploy:
       resources:
         reservations:

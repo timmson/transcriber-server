@@ -9,6 +9,4 @@ RUN apt update && apt install apt-transport-https && \
 
 WORKDIR /app
 
-RUN python3 -m venv .venv &&  \
-    pip3 install faster-whisper==1.2.1 --break-system-packages \
-    # pip3 install -r requirements.txt --break-system-packages
+RUN pip3 install faster-whisper==1.2.1 --break-system-packages
